@@ -12,7 +12,6 @@ import javax.validation.Valid;
 public class GerenciadorChamadas {
 
 
-
     @GetMapping(path = "/somar/{num1}/{num2}")
     public ResponseEntity<Integer> somar(@PathVariable("num1") Integer textA, @PathVariable("num2") Integer textB) {
         System.out.println("\nChamada de Soma recebida");
