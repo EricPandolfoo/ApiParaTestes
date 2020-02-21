@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/api/calculadora")
+@RequestMapping("/api")
 public class GerenciadorChamadas {
 
 
@@ -30,24 +30,36 @@ public class GerenciadorChamadas {
     public ResponseEntity<String> listar() {
         System.out.printf("\nChamada GET de vagões disponíveis recebida");
         String retorno = "[{\n" +
-                "\t\"codigo\": \"codigo\",\n" +
-                "\t\"peso\": \"peso\",\n" +
-                "\t\"produto\": \"produto\",\n" +
-                "\t\"data\": \"data\",\n" +
-                "\t\"densidade\": \"densidade\"\n" +
-                "}, {\n" +
-                "\t\"codigo\": \"codigo\",\n" +
-                "\t\"peso\": \"peso\",\n" +
-                "\t\"produto\": \"produto\",\n" +
-                "\t\"data\": \"data\",\n" +
-                "\t\"densidade\": \"densidade\"\n" +
-                "}, {\n" +
-                "\t\"codigo\": \"codigo\",\n" +
-                "\t\"peso\": \"peso\",\n" +
-                "\t\"produto\": \"produto\",\n" +
-                "\t\"data\": \"data\",\n" +
-                "\t\"densidade\": \"densidade\"\n" +
-                "}]";
+                "\t\t\"codigo\": \"7153708\",\n" +
+                "\t\t\"serie\": \"HFS\",\n" +
+                "\t\t\"pesoMaximo\": 100000\n" +
+                "\t},\n" +
+                "\t{\n" +
+                "\t\t\"codigo\": \"0524999\",\n" +
+                "\t\t\"serie\": \"HFT\",\n" +
+                "\t\t\"pesoMaximo\": 118000\n" +
+                "\t},\n" +
+                "\t{\n" +
+                "\t\t\"codigo\": \"4501465\",\n" +
+                "\t\t\"serie\": \"HFS\",\n" +
+                "\t\t\"pesoMaximo\": 100000\n" +
+                "\t},\n" +
+                "\t{\n" +
+                "\t\t\"codigo\": \"416848\",\n" +
+                "\t\t\"serie\": \"HFT\",\n" +
+                "\t\t\"pesoMaximo\": 118000\n" +
+                "\t},\n" +
+                "\t{\n" +
+                "\t\t\"codigo\": \"87465132\",\n" +
+                "\t\t\"serie\": \"HFS\",\n" +
+                "\t\t\"pesoMaximo\": 100000\n" +
+                "\t},\n" +
+                "\t{\n" +
+                "\t\t\"codigo\": \"2130846\",\n" +
+                "\t\t\"serie\": \"HFT\"\n" +
+                "\t\t\"pesoMaximo\": 124600\n" +
+                "\t}\n" +
+                "]";
         return ResponseEntity.status(HttpStatus.OK).body(retorno);
     }
 
