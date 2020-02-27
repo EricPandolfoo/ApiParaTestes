@@ -1,11 +1,13 @@
 package com.example.api.calculadora.controller;
 
+
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-
 import javax.validation.Valid;
+
 
 @RestController
 @RequestMapping("/api")
@@ -20,9 +22,13 @@ public class GerenciadorChamadas {
     }
 
     @PostMapping(path = "/cargas")
-    public ResponseEntity<String> cargas(@Valid @RequestBody String bodyRequest) {
+    public ResponseEntity<String> cargas(@Valid @RequestBody String bodyRequest) throws JSONException {
         System.out.printf("\nChamada POST de cargas recebida" + "\nBody:\n");
-        System.out.println(bodyRequest);
+        //System.out.println(bodyRequest);
+
+        JSONArray json = new JSONArray(bodyRequest);
+        System.out.println(json);
+
         return ResponseEntity.status(HttpStatus.OK).body(bodyRequest);
     }
 
@@ -56,7 +62,7 @@ public class GerenciadorChamadas {
                 "\t},\n" +
                 "\t{\n" +
                 "\t\t\"codigo\": \"2130846\",\n" +
-                "\t\t\"serie\": \"HFT\"\n" +
+                "\t\t\"serie\": \"HFT\",\n" +
                 "\t\t\"pesoMaximo\": 124600\n" +
                 "\t}\n" +
                 "]";
